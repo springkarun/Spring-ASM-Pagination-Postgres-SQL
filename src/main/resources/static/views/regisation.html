@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/angular.js"></script>
+
+<body bgcolor="99FFFF">
+
+<div ng-app="app" ng-controller="myctrlp" style="border: #985f0d">
+
+    <form ng-submit="submitForm()">
+
+        <table cellpadding="3" width="32%" bgcolor="d6fffc" align="center" cellspacing="2">
+
+            <tr>
+                <td colspan=2>
+                    <br><br>
+                    <center><font size=4><b>Student Registration</b></font></center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Select Course:</td>
+                <td>
+                    <select name="cateSelect" ng-model="cateSelect">
+                        <option value="" required>--Select Course--</option>
+                        <option ng-repeat="option in arrlists" value="{{option.crs_id}}">{{option.crs_name}}</option>
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="fname" ng-model="fname" required/></td>
+            </tr>
+
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="lname" ng-model="lname" required/></td>
+            </tr>
+
+
+            <tr>
+                <td>Email Id:</td>
+                <td><input type="email" name="email" ng-model="email" required/></td>
+            </tr>
+
+
+            <tr>
+                <td>Mobile:</td>
+                <td><input type="text" maxlength="10" name="mobile" ng-model="mobile" required/></td>
+            </tr>
+
+
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <label> <input type="radio" name="gender" value="Male" ng-model="gender" checked>Male</label> &nbsp;
+                    <label> <input type="radio" name="gender" value="Female" ng-model="gender">Female</label>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>Age:</td>
+                <td><select name="age" ng-model="age">
+                    <option value="-1" selected>select..</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                </select></td>
+
+            </tr>
+
+
+            <tr>
+                <td>City:</td>
+                <td><select name="city" ng-model="city">
+                    <option value="-1" selected>select..</option>
+                    <option value="New Delhi">NEW DELHI</option>
+                    <option value="Mumbai">MUMBAI</option>
+                    <option value="Goa">GOA</option>
+                    <option value="Bihar">BIHAR</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Noida">Noida</option>
+                    <option value="MP">MP</option>
+                    <option value="Bokaro">Bokaro</option>
+                    <option value="Ranchi">Ranchi</option>
+                    <option value="Banglore">Banglore</option>
+                    <option value="Chennia">Chennia</option>
+                    <option value="Varanshi">Varanshi</option>
+                    <option value="Panjab">Panjab</option>
+                    <option value="Gujrat">Gujrat</option>
+                    <option value="Patna">Patna</option>
+                </select></td>
+            </tr>
+            <br><br>
+
+            <tr>
+                <td>Avatar URL </td>
+                <td><textarea rows="4" cols="21" placeholder="Enter Iamge url..." name="avatar" ng-model="avatar" required></textarea></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <br>
+                    <button type="submit" ng-click="checkselection()">Submit</button>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><p style="color: #5cb85c">{{postResultMessage}}</p></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td> <a href="/allStudent">Show All</a> <br></td>
+                <td></td>
+            </tr>
+
+
+        </table>
+    </form>
+
+
+</div>
+
+
+
+</body>
+</html>

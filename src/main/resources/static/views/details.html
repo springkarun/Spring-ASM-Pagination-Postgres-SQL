@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+
+<style>
+    table, td, th {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+</style>
+
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/angular.js"></script>
+
+
+<div ng-app="app" ng-controller="myctrl">
+
+    <h1 style="color: #31b0d5">Show All Student List</h1>
+
+    <table>
+        <tr style="background-color:#f1f1f1">
+            <th>Sr.</th>
+            <th>Image</th>
+            <th>Student Id</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Date</th>
+
+        </tr>
+
+
+        <tr ng-repeat="x in allStudent">
+
+            <!--col 0-->
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+
+                {{$index+1}}
+            </td>
+
+            <td ng-if="$even">
+
+                {{$index+1}}
+            </td>
+
+
+            <!-- Image -->
+
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+
+                <img alt="opp.." ng-src="{{x.avatar}}" width="50" height="50"/>
+
+            </td>
+
+            <td ng-if="$even">
+                <img alt="opp.." ng-src="{{x.avatar}}" width="50" height="50"/>
+
+            </td>
+
+
+
+
+            <!--col 1-->
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+
+                {{ x.stu_id }}
+            </td>
+
+            <td ng-if="$even">
+
+                {{ x.stu_id }}
+            </td>
+
+
+            <!--col 2-->
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+
+                {{ x.fname }} {{ x.lname }}
+            </td>
+
+            <td ng-if="$even">
+                {{ x.fname }} {{ x.lname }}
+
+            </td>
+
+
+            <!--col 3-->
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+
+                {{ x.email }}
+            </td>
+
+            <td ng-if="$even">
+                {{ x.email }}
+            </td>
+
+
+            <!--col 4-->
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+
+                {{ x.mobile }}
+            </td>
+
+            <td ng-if="$even">
+                {{ x.mobile }}
+            </td>
+
+
+            <!--col 5-->
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+
+                {{ x.gender }}
+            </td>
+
+            <td ng-if="$even">
+
+                {{ x.gender }}
+            </td>
+
+
+            <!--col 6-->
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+
+                {{ x.age }}
+            </td>
+
+            <td ng-if="$even">
+                {{ x.age }}
+            </td>
+
+
+            <!--col 7-->
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+
+                {{ x.city }}
+            </td>
+
+            <td ng-if="$even">
+                {{ x.city }}
+            </td>
+
+
+            <!--col 8-->
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+
+                {{ x.date }}
+            </td>
+
+            <td ng-if="$even">
+                {{ x.date }}
+            </td>
+
+
+
+
+
+        </tr>
+
+    </table>
+
+
+    <!--
+                <ul>
+                    <li ng-repeat="s in allcustomers.data">
+                        <strong>Sr. {{$index+1}}</strong><br />
+
+                       &lt;!&ndash; <div>
+                            <img alt="" ng-src="http://localhost:8080/api/images/{{s.shopAvatar}}" />
+                            <img alt="" ng-src="http://localhost:8080/api/images/{{s.ownerContact}}" />
+
+                        </div>&ndash;&gt;
+
+
+                    </li>
+                </ul>-->
+
+    <p>{{getResultMessage}}</p>
+
+</div>
+<br><br>
+<a href="/createReg">Regisation</a>
+
+</body>
+</html>
